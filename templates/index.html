@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+
+
+{% block content %}
+
+{% for tour in tours %}
+
+        <div class="form-group">
+            <h1>{{tour.title}}</h1>
+            <p>{{tour.price}}</p>
+            <img src="{{ tour.image_url }}">
+        </div>
+        <li>
+            <a href="{{ url_for('tour_details', tour_id=tour.id ) }}">details</a>
+        </li>
+    {% endfor %}
+
+{% endblock %}
